@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: giteaadmin
+  name: giteaadmin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: giteaadmin
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: giteaadmin
+    spec:
+      containers:
+      - image: eurogig/giteaadmin:0.3
+        name: giteaadmin
+        ports:
+        - containerPort: 3000
+      - env:
+        - name: MYHOST
+          value: PARTICIPANT_ID

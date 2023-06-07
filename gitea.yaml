@@ -1,0 +1,21 @@
+users:
+    thealice:
+        email: alice@wonderland.com
+        password: thealice
+orgs:
+    thebank:
+        teams:
+            Maintainers:
+                permission: write
+                members:
+                    - thealice
+        repos:
+            janky-bank:
+                private: false
+                source: https://github.com/eurogig/jankybank.git
+                code: repositories/janky-bank
+                collaborators:
+                    thealice: write
+                branch_protections:
+                    main:
+                        required_approvals: 1
